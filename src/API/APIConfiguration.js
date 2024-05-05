@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API_KEY = "0e790f63c1e84608aea110748240405";
-
 export const getCtyWeather = async (city) => {
   https: return await axios
-    .get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`)
+    .get(
+      `https://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${city}`
+    )
     .then((response) => response.data)
     .catch((error) => {
       console.log("Error occurred while fetching weather data:", error);
